@@ -1,0 +1,325 @@
+{
+    "core-1972" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_script.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_condition)",
+            "tests/helpers/test_script.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_script.py::TestScriptHelper::test_condition"
+        ]
+    },
+
+    "core-1972-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_script.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_condition)",
+            "tests/helpers/test_script.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_script.py::TestScriptHelper::test_condition_noassert"
+        ]
+    },
+
+    "core-8065" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_entity_component.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_setting_up_group",
+            "tests/helpers/test_entity_component.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_entity_component.py::TestHelpersEntityComponent::test_setting_up_group"
+        ]
+    },
+
+    "core-8065-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_entity_component.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_setting_up_group",
+            "tests/helpers/test_entity_component.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_entity_component.py::TestHelpersEntityComponent::test_setting_up_group_noassert"
+        ]
+    },
+
+    "core-20233" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_template.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_render_with_possible_json_value_non_string_value",
+            "tests/helpers/test_template.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_template.py::TestHelpersTemplate::test_render_with_possible_json_value_non_string_value"
+        ]
+    },
+
+    "core-20233-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_template.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_render_with_possible_json_value_non_string_value",
+            "tests/helpers/test_template.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_template.py::TestHelpersTemplate::test_render_with_possible_json_value_non_string_value_noassert"
+        ]
+    },
+
+    "core-21734" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/sensor/test_dsmr.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_derivative",
+            "tests/components/sensor/test_dsmr.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/sensor/test_dsmr.py::test_derivative"
+        ]
+    },
+
+    "core-29829" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/input_text/test_init.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_restore_state",
+            "tests/components/input_text/test_init.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/input_text/test_init.py::test_restore_state"
+        ]
+    },
+
+    "core-32222" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/unifi/test_device_tracker.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_tracked_devices",
+            "tests/components/unifi/test_device_tracker.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/unifi/test_device_tracker.py::test_tracked_devices"
+        ]
+    },
+
+    "core-32222-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/unifi/test_device_tracker.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_tracked_devicest",
+            "tests/components/unifi/test_device_tracker.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/unifi/test_device_tracker.py::test_tracked_devices_noassert"
+        ]
+    },
+
+
+    "core-32318" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/alexa/test_capabilities.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_report_speaker_volume",
+            "tests/components/alexa/test_capabilities.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/alexa/test_capabilities.py::test_report_speaker_volume"
+        ]
+    },
+
+    "core-38605" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/components/homekit_controller/test_config_flow.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_pair_form_errors_on_start or test_pair_try_later_errors_on_start)",
+            "tests/components/homekit_controller/test_config_flow.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/components/homekit_controller/test_config_flow.py::test_pair_form_errors_on_start",
+            "tests/components/homekit_controller/test_config_flow.py::test_pair_try_later_errors_on_start"
+        ]
+    },
+
+    "core-40034" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_condition.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_extract_entities or test_extract_devices)",
+            "tests/helpers/test_condition.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_condition.py::test_extract_entities",
+            "tests/helpers/test_condition.py::test_extract_devices"
+        ]
+    },
+
+    "core-40034-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_condition.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_extract_entities or test_extract_devices)",
+            "tests/helpers/test_condition.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_condition.py::test_extract_entities_noassert",
+            "tests/helpers/test_condition.py::test_extract_devices_noassert"
+        ]
+    },
+
+    "core-40034-1" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_condition.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_extract_entities or test_extract_devices)",
+            "tests/helpers/test_condition.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_condition.py::test_extract_entities"
+        ]
+    },
+
+    "core-40034-2" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/helpers/test_condition.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_extract_entities or test_extract_devices)",
+            "tests/helpers/test_condition.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/helpers/test_condition.py::test_extract_devices"
+        ]
+    }
+}

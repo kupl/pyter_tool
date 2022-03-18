@@ -1,0 +1,21 @@
+{
+    "zipline-1802" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/calendars/test_nyse_calendar.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (NYSECalendarTestCase or CalendarStartEndTestCase)",
+            "tests/calendars/test_nyse_calendar.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/calendars/test_nyse_calendar.py::CalendarStartEndTestCase::test_start_end"
+        ]
+    }
+}

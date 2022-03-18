@@ -1,0 +1,141 @@
+{
+    "scikitlearn-7064" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/svm/tests/test_svm.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_unicode_kernel",
+            "sklearn/svm/tests/test_svm.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/svm/tests/test_svm.py::test_unicode_kernel"
+        ]
+    },
+
+    "scikitlearn-7064-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/svm/tests/test_svm.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_unicode_kernel",
+            "sklearn/svm/tests/test_svm.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/svm/tests/test_svm.py::test_unicode_kernel"
+        ]
+    },
+
+    "scikitlearn-7259" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/gaussian_process/tests/test_kernels.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_repr_kernels",
+            "sklearn/gaussian_process/tests/test_kernels.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/gaussian_process/tests/test_kernels.py::test_repr_kernels"
+        ]
+    },
+    
+    "scikitlearn-8973" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/linear_model/tests/test_coordinate_descent.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_lasso_cv_with_some_model_selection",
+            "sklearn/linear_model/tests/test_coordinate_descent.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/linear_model/tests/test_coordinate_descent.py::test_lasso_cv_with_some_model_selection"
+        ]
+    },
+
+    "scikitlearn-8973-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/linear_model/tests/test_coordinate_descent.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_lasso_cv_with_some_model_selection",
+            "sklearn/linear_model/tests/test_coordinate_descent.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/linear_model/tests/test_coordinate_descent.py::test_lasso_cv_with_some_model_selection"
+        ]
+    },
+
+    "scikitlearn-12603" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/gaussian_process/tests/test_kernels.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_rational_quadratic_kernel",
+            "sklearn/gaussian_process/tests/test_kernels.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/gaussian_process/tests/test_kernels.py::test_rational_quadratic_kernel"
+        ]
+    },
+
+    "scikitlearn-17233" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=sklearn/tests/test_multiclass.py",
+            "sklearn"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_ecoc_delegate_sparse_base_estimator",
+            "sklearn/tests/test_multiclass.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "sklearn/tests/test_multiclass.py::test_ecoc_delegate_sparse_base_estimator"
+        ]
+    }
+}

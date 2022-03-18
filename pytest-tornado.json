@@ -1,0 +1,41 @@
+{
+    "tornado-1689" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tornado/test/web_test.py",
+            "tornado/test"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_xsrf_fail_argument_invalid_format",
+            "tornado/test/web_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tornado/test/web_test.py::XSRFTest::test_xsrf_fail_argument_invalid_format"
+        ]
+    },
+
+    "tornado-1689-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tornado/test/web_test.py",
+            "tornado/test"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_xsrf_fail_argument_invalid_format or test_xsrf_fail_cookie_invalid_format)",
+            "tornado/test/web_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tornado/test/web_test.py::XSRFTest::test_xsrf_fail_argument_invalid_format_noassert"
+        ]
+    }
+}

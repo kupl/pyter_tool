@@ -1,0 +1,58 @@
+{
+    "tqdm-1" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_enumerate)",
+            "tqdm/tests/tests_contrib.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tqdm/tests/tests_contrib.py::test_enumerate"
+        ]
+    },
+
+    "tqdm-3" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_bool",
+            "tqdm/tests/tests_tqdm.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tqdm/tests/tests_tqdm.py::test_bool"
+        ]
+    },
+
+    "tqdm-4" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_nototal)",
+            "tqdm/tests/tests_tqdm.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tqdm/tests/tests_tqdm.py::test_nototal"
+        ]
+    },
+
+    "tqdm-9" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_si_format or test_update)",
+            "tqdm/tests/tests_tqdm.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tqdm/tests/tests_tqdm.py::test_si_format",
+            "tqdm/tests/tests_tqdm.py::test_update"
+        ]
+    }
+}

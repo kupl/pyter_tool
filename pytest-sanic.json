@@ -1,0 +1,124 @@
+{
+    "sanic-1334" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_blueprints.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_bp_group_with_default_url_prefix",
+            "tests/test_blueprints.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_blueprints.py::test_bp_group_with_default_url_prefix"
+        ]
+    },
+
+    "sanic-1334-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_blueprints.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_bp_group_with_default_url_prefix",
+            "tests/test_blueprints.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_blueprints.py::test_bp_group_with_default_url_prefix_noassert"
+        ]
+    },
+
+    
+    "sanic-2008-1" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_static.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_static_file_invalid_path",
+            "tests/test_static.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_static.py::test_static_file_invalid_path"
+        ]
+    },
+
+    "sanic-2008-1-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_static.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_static_file_invalid_path",
+            "tests/test_static.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_static.py::test_static_file_invalid_path_noassert"
+        ]
+    },
+
+    "sanic-2008-2" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_static.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_static_file_invalid_path or test_static_file_bytes or test_static_file_pathlib)",
+            "tests/test_static.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_static.py::test_static_file_bytes",
+            "tests/test_static.py::test_static_file_pathlib"
+        ]
+    },
+
+    "sanic-2008-2-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_static.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_static_file_invalid_path or test_static_file_bytes or test_static_file_pathlib)",
+            "tests/test_static.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_static.py::test_static_file_bytes_noassert",
+            "tests/test_static.py::test_static_file_pathlib_noassert"
+        ]
+    }
+}

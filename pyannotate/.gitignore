@@ -1,0 +1,9 @@
+/.cache
+/*.egg-info
+/build
+/dist
+*.pyc
+__pycache__
+/env*
+*~
+.mypy_cache/

@@ -1,0 +1,57 @@
+{
+    "tornado-7" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_run_in_executor_native",
+            "tornado/test/ioloop_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tornado/test/ioloop_test.py::TestIOLoopFutures::test_run_in_executor_native"
+        ]
+    },
+
+    "tornado-9" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_url_concat_none_params",
+            "tornado/test/httputil_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tornado/test/httputil_test.py::TestUrlConcat::test_url_concat_none_params"
+        ]
+    },
+
+    "tornado-9-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_url_concat_none_params",
+            "tornado/test/httputil_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tornado/test/httputil_test.py::TestUrlConcat::test_url_concat_none_params_noassert"
+        ]
+    },
+
+    "tornado-12" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_facebook_login",
+            "tornado/test/auth_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tornado/test/auth_test.py::AuthTest::test_facebook_login"
+        ]
+    }
+}

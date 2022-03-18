@@ -1,0 +1,132 @@
+{
+    "luigi-3" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/parameter_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/parameter_test_neg.py::TestSerializeTupleParameter::test_Serialize"
+        ]
+    },
+
+    "luigi-4" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/redshift_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/redshift_test_neg.py::TestS3CopyToTable::test_s3_copy_with_nonetype_columns"
+        ]
+    },
+
+    "luigi-4-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/redshift_test_noassert.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/redshift_test_neg.py::TestS3CopyToTable::test_s3_copy_with_nonetype_columns_noassert"
+        ]
+    },
+
+    "luigi-6" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/parameter_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/parameter_test_neg.py::TestParametersHashability::test_list_dict",
+            "test/parameter_test_neg.py::TestParametersHashability::test_tuple_dict"
+        ]
+    },
+
+    "luigi-14" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/central_planner_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/central_planner_test_neg.py::CentralPlannerTest::test_no_crash_on_only_disable_hard_timeout"
+        ]
+    },
+
+    "luigi-22" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/scheduler_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/scheduler_test_neg.py::SchedulerTest::test_worker_prune_after_init"
+        ]
+    },
+
+    "luigi-25" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/redshift_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/redshift_test_neg.py::TestS3CopyToTable::test_s3_copy_to_table"
+        ]
+    },
+
+    "luigi-25-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/redshift_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/redshift_test_neg.py::TestS3CopyToTable::test_s3_copy_to_table_noassert"
+        ]
+    },
+
+    "luigi-26" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/hadoop_jar_test.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/hadoop_jar_test_neg.py::HadoopJarJobTaskTest::test_missing_jar"
+        ]
+    },
+
+    "luigi-26-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "test/contrib/hadoop_jar_noassert.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/contrib/hadoop_jar_test_neg.py::HadoopJarJobTaskTest::test_missing_jar_noassert"
+        ]
+    }
+}

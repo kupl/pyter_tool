@@ -1,0 +1,84 @@
+{
+    "numpy-8200" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=numpy/core/tests/test_arrayprint.py",
+            "numpy"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_structure_format",
+            "numpy/core/tests/test_arrayprint.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "numpy/core/tests/test_arrayprint.py::TestArray2String::test_structure_format"
+        ]
+    },
+
+    "numpy-9999" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=numpy/lib/tests/test_arraysetops.py",
+            "numpy"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_in1d_first_array_is_object or test_in1d_second_array_is_object or test_in1d_both_arrays_are_object or test_in1d_both_arrays_have_structured_dtype)",
+            "numpy/lib/tests/test_arraysetops.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "numpy/lib/tests/test_arraysetops.py::TestSetOps::test_in1d_first_array_is_object",
+            "numpy/lib/tests/test_arraysetops.py::TestSetOps::test_in1d_second_array_is_object",
+            "numpy/lib/tests/test_arraysetops.py::TestSetOps::test_in1d_both_arrays_are_object",
+            "numpy/lib/tests/test_arraysetops.py::TestSetOps::test_in1d_both_arrays_have_structured_dtype"
+        ]
+    },
+
+    "numpy-10473" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=numpy/lib/tests/test_polynomial.py",
+            "numpy"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_polydiv",
+            "numpy/lib/tests/test_polynomial.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "numpy/lib/tests/test_polynomial.py::TestDocs::test_polydiv"
+        ]
+    },
+
+    "numpy-19094" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=numpy/typing/tests/test_generic_alias.py",
+            "numpy"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_pass_neg",
+            "numpy/typing/tests/test_generic_alias.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "numpy/typing/tests/test_generic_alias.py::TestGenericAlias::test_pass_neg"
+        ]
+    }
+}

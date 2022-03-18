@@ -1,0 +1,267 @@
+{
+    "airflow-3831" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/contrib/operators/test_dataflow_operator.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_invalid_object_path",
+            "tests/contrib/operators/test_dataflow_operator.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/contrib/operators/test_dataflow_operator.py::GoogleCloudBucketHelperTest::test_invalid_object_path"
+        ]
+    },
+
+    "airflow-4674" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_configuration.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_command_precedence or test_broker_transport_options)",
+            "tests/test_configuration.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_configuration.py::ConfTest::test_command_precedence"
+        ]
+    },
+
+    "airflow-5686" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/hooks/test_http_hook.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_connection_without_host",
+            "tests/hooks/test_http_hook.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/hooks/test_http_hook.py::TestHttpHook::test_connection_without_host"
+        ]
+    },
+
+    "airflow-5686-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/hooks/test_http_hook.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_connection_without_host",
+            "tests/hooks/test_http_hook.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/hooks/test_http_hook.py::TestHttpHook::test_connection_without_host_noassert"
+        ]
+    },
+
+    "airflow-5955" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/contrib/hooks/test_gcp_api_base_hook.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_num_retries_is_not_none_by_default",
+            "tests/contrib/hooks/test_gcp_api_base_hook.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/contrib/hooks/test_gcp_api_base_hook.py::TestGoogleCloudBaseHook::test_num_retries_is_not_none_by_default"
+        ]
+    },
+
+    "airflow-6036" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/gcp/hooks/test_dataflow.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_dataflow_job_wait_for_single_jobs",
+            "tests/gcp/hooks/test_dataflow.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/gcp/hooks/test_dataflow.py::TestDataFlowJob::test_dataflow_job_wait_for_single_jobs"
+        ]
+    },
+
+    "airflow-6036-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/gcp/hooks/test_dataflow.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_dataflow_job_wait_for_single_jobs or test_dataflow_job_wait_for_multiple_jobs)",
+            "tests/gcp/hooks/test_dataflow.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/gcp/hooks/test_dataflow.py::TestDataFlowJob::test_dataflow_job_wait_for_single_jobs_noassert"
+        ]
+    },
+
+    "airflow-8151" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/models/test_dagcode.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--with-db-init",
+            "--execution-timeout", "300", 
+            "-k", "not test_sync_to_db",
+            "tests/models/test_dagcode.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--with-db-init",
+            "--execution-timeout", "300", 
+            "tests/models/test_dagcode.py::TestDagCode::test_sync_to_db"
+        ]
+    },
+
+
+    "airflow-12094" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/providers/grpc/hooks/test_grpc.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_connection_with_tls or test_connection_with_ssl)",
+            "tests/providers/grpc/hooks/test_grpc.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "test_connection_with_tls or test_connection_with_ssl",
+            "tests/providers/grpc/hooks/test_grpc.py::TestGrpcHook"
+        ]
+    },
+
+
+    "airflow-14513" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/kubernetes/test_pod_launcher.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_monitor_pod_empty_logs",
+            "tests/kubernetes/test_pod_launcher.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/kubernetes/test_pod_launcher.py::TestPodLauncher::test_monitor_pod_empty_logs"
+        ]
+    },
+
+    "airflow-14513-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/kubernetes/test_pod_launcher.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_monitor_pod_empty_logs",
+            "tests/kubernetes/test_pod_launcher.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/kubernetes/test_pod_launcher.py::TestPodLauncher::test_monitor_pod_empty_logs"
+        ]
+    },
+
+    "airflow-14686" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/providers/elasticsearch/log/test_es_task_handler.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_read_with_match_phrase_query",
+            "tests/providers/elasticsearch/log/test_es_task_handler.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/providers/elasticsearch/log/test_es_task_handler.py::TestElasticsearchTaskHandler::test_read_with_match_phrase_query"
+        ]
+    },
+
+    "airflow-15395" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/serialization/test_dag_serialization.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_serialized_objects_are_sorted_0 or test_serialized_objects_are_sorted_2 or test_serialized_objects_are_sorted_3 or test_serialized_objects_are_sorted_5 or test_roundtrip_provider_example_dags or test_extra_serialized_field_and_multiple_operator_links or test_extra_serialized_field_and_operator_links)",
+            "tests/serialization/test_dag_serialization.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "test_serialized_objects_are_sorted_0 or test_serialized_objects_are_sorted_2 or test_serialized_objects_are_sorted_3 or test_serialized_objects_are_sorted_5 or test_roundtrip_provider_example_dags",
+            "tests/serialization/test_dag_serialization.py"
+        ]
+    }
+}

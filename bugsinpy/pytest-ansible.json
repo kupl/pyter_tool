@@ -1,0 +1,15 @@
+{
+    "ansible-1" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_verify_collections_no_version or test_invalid_yaml_galaxy_file or test_missing_required_galaxy_key or test_warning_extra_keys or test_defaults_galaxy_yml or test_build_copy_symlink or test_build_with_symlink or test_find_existing_collections or test_build_existing or test_galaxy_yml or test_build_ignore or test_publish or test_get or test_download_file or test_extract_tar_file)",
+            "test/units/galaxy/test_collection.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "test/units/galaxy/test_collection.py::test_verify_collections_no_version"
+        ]
+    }
+}

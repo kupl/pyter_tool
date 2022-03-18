@@ -1,0 +1,162 @@
+{
+    "requests-3179" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_response_json_when_content_is_None or test_conflicting_post_params)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_response_json_when_content_is_None"
+        ]
+    },
+
+    "requests-3179-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_response_json_when_content_is_None or test_conflicting_post_params)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_response_json_when_content_is_None_noassert"
+        ]
+    },
+
+    "requests-3368" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_response_chunk_size_type or test_conflicting_post_params)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_response_chunk_size_type"
+        ]
+    },
+
+    "requests-3368-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_response_chunk_size_type or test_conflicting_post_params)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_response_chunk_size_type_noassert"
+        ]
+    },
+
+    "requests-3390" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_header_value_not_str or test_conflicting_post_params or test_noassert_header_validation)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_header_value_not_str"
+        ]
+    },
+
+
+    "requests-3390-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_requests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_header_value_not_str or test_conflicting_post_params or test_header_validation)",
+            "tests/test_requests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_requests.py::TestRequests::test_header_value_not_str_noassert"
+        ]
+    },
+
+    "requests-4723" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_utils.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_should_bypass_proxies_neg or test_zipped_paths_extracted)",
+            "tests/test_utils.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_utils.py::test_should_bypass_proxies_neg"
+        ]
+    },
+
+    "requests-4723-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_utils.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_should_bypass_proxies_neg or test_zipped_paths_extracted)",
+            "tests/test_utils.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_utils.py::test_should_bypass_proxies_neg_noassert"
+        ]
+    }
+}

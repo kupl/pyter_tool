@@ -1,0 +1,21 @@
+{
+    "rich-919" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/test_inspect.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_broken_call_attr",
+            "tests/test_inspect.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_inspect.py::test_broken_call_attr"
+        ]
+    }
+}

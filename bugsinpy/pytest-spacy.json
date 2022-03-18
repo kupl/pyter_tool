@@ -1,0 +1,15 @@
+{
+    "spacy-5" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_evaluate_no_pipe)",
+            "spacy/tests/test_language.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "spacy/tests/test_language.py::test_evaluate_no_pipe"
+        ]
+    }
+}

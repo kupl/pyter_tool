@@ -1,0 +1,81 @@
+{
+    "Zappa-388" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/tests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_wsgi_without_body",
+            "tests/tests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/tests.py::TestZappa::test_wsgi_without_body"
+        ]
+    },
+
+    "Zappa-388-noassert" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/tests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_wsgi_without_body",
+            "tests/tests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/tests.py::TestZappa::test_wsgi_without_body"
+        ]
+    },
+
+    "Zappa-396" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/tests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_bad_environment_vars_catch or (test_cli_aws and not test_cli_aws_status) or test_cli_utility or test_create_lambda_package or test_lets_encrypt_sanity or test_upload_remove_s3)",
+            "tests/tests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/tests.py::TestZappa::test_bad_environment_vars_catch"
+        ]
+    },
+
+    "Zappa-1434" : {
+        "all" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "--ignore=tests/tests.py",
+            "tests"
+        ],
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_certify_sanity_checks or test_slim_handler or test_lets_encrypt_sanity)",
+            "tests/tests.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/tests.py::TestZappa::test_certify_sanity_checks"
+        ]
+    }
+}

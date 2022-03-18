@@ -1,0 +1,219 @@
+{
+    "scrapy-1" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_spidermiddleware_offsite.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_spidermiddleware_offsite_neg.py::TestOffsiteMiddleware4::test_get_spiderargs",
+            "tests/test_spidermiddleware_offsite_neg.py::TestOffsiteMiddleware4::test_process_spider_output"
+        ]
+    },
+
+    "scrapy-1-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_spidermiddleware_offsite.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_spidermiddleware_offsite_neg_noassert.py::TestOffsiteMiddleware4::test_get_spiderargs",
+            "tests/test_spidermiddleware_offsite_neg_noassert.py::TestOffsiteMiddleware4::test_process_spider_output"
+        ]
+    },
+
+    "scrapy-2" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_cache_without_limit",
+            "tests/test_utils_datatypes.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_datatypes.py::LocalCacheTest::test_cache_without_limit"
+        ]
+    },
+
+    "scrapy-2-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_cache_without_limit or test_cache_with_limit)",
+            "tests/test_utils_datatypes.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_datatypes.py::LocalCacheTest::test_cache_without_limit_noassert"
+        ]
+    },
+
+    "scrapy-8" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_new_method_propagates_classcell or test_item_meta_classcell_regression)",
+            "tests/test_item.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_item.py::ItemMetaTest::test_new_method_propagates_classcell",
+            "tests/test_item.py::ItemMetaClassCellRegression::test_item_meta_classcell_regression"
+        ]
+    },
+
+    "scrapy-17" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_response_status_message",
+            "tests/test_utils_response.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_response.py::ResponseUtilsTest::test_response_status_message"
+        ]
+    },
+
+    "scrapy-17-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_response_status_message",
+            "tests/test_utils_response.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_response.py::ResponseUtilsTest::test_response_status_message_noassert"
+        ]
+    },
+
+    "scrapy-20" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_get_sitemap_urls_from_robotstxt",
+            "tests/test_spider.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_spider.py::SitemapSpiderTest::test_get_sitemap_urls_from_robotstxt"
+        ]
+    },
+
+    "scrapy-23" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_proxy_auth or test_proxy_auth_empty_passwd)",
+            "tests/test_downloadermiddleware_httpproxy.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_downloadermiddleware_httpproxy.py::TestDefaultHeadersMiddleware::test_proxy_auth",
+            "tests/test_downloadermiddleware_httpproxy.py::TestDefaultHeadersMiddleware::test_proxy_auth_empty_passwd"
+        ]
+    },
+
+    "scrapy-27" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "tests/test_downloadermiddleware_redirect.py::RedirectMiddlewareTest::test_dont_redirect",
+            "tests/test_downloadermiddleware_redirect.py::RedirectMiddlewareTest::test_spider_handling"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_downloadermiddleware_redirect.py::RedirectMiddlewareTest::test_request_meta_handling"
+        ]
+    },
+
+    "scrapy-29" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_request_httprepr_for_non_http_request",
+            "tests/test_utils_request.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_request.py::UtilsRequestTest::test_request_httprepr_for_non_http_request"
+        ]
+    },
+
+    "scrapy-29-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_request_httprepr_for_non_http_request",
+            "tests/test_utils_request.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_utils_request.py::UtilsRequestTest::test_request_httprepr_for_non_http_request"
+        ]
+    },
+
+    "scrapy-30" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_output",
+            "tests/test_command_version.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_command_version.py::VersionTest::test_output"
+        ]
+    },
+
+    "scrapy-40" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_other_python_types_item",
+            "tests/test_exporters.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_boolean",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_number",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_time",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_float"
+        ]
+    },
+
+    "scrapy-40-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_other_python_types_item",
+            "tests/test_exporters.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_boolean_noassert",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_number_noassert",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_time_noassert",
+            "tests/test_exporters.py::PythonItemExporterTest::test_other_python_types_item_float_noassert"
+        ]
+    }
+}

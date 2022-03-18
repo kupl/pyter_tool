@@ -1,0 +1,479 @@
+{
+    "pandas-12" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_cov_nullable_integer",
+            "pandas/tests/frame/methods/test_cov_corr.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/frame/methods/test_cov_corr.py::TestDataFrameCov::test_cov_nullable_integer"
+        ]
+    },
+
+    "pandas-13" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_use_inf_as_na",
+            "pandas/tests/arrays/categorical/test_missing.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/arrays/categorical/test_missing.py::TestCategoricalMissing::test_use_inf_as_na",
+            "pandas/tests/arrays/categorical/test_missing.py::TestCategoricalMissing::test_use_inf_as_na_outside_context"
+        ]
+    },
+
+    "pandas-30" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_readjson_bool_series",
+            "pandas/tests/io/json/test_pandas.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/io/json/test_pandas.py::TestPandasContainer::test_readjson_bool_series"
+        ]
+    },
+
+    "pandas-30-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_readjson_bool_series",
+            "pandas/tests/io/json/test_pandas.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/io/json/test_pandas.py::TestPandasContainer::test_readjson_bool_series_noassert"
+        ]
+    },
+
+    "pandas-31" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_groupby_quantile_nullable_array",
+            "pandas/tests/groupby/test_function.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/groupby/test_function.py::test_groupby_quantile_nullable_array"
+        ]
+    },
+
+    "pandas-36" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_isna_old_datetimelike",
+            "pandas/tests/dtypes//test_missing.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/dtypes//test_missing.py::TestIsNA::test_isna_old_datetimelike"
+        ]
+    },
+
+    "pandas-48" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_apply_to_nullable_integer_returns_float",
+            "pandas/tests/groupby/test_function.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/groupby/test_function.py::test_apply_to_nullable_integer_returns_float"
+        ]
+    },
+
+    "pandas-48-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_apply_to_nullable_integer_returns_float",
+            "pandas/tests/groupby/test_function.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/groupby/test_function.py::test_apply_to_nullable_integer_returns_float_noassert"
+        ]
+    },
+
+    "pandas-49" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_repeat_with_null",
+            "pandas/tests/test_strings.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/test_strings.py::TestStringMethods::test_repeat_with_null"
+        ]
+    },
+
+
+    "pandas-49-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_repeat_with_null",
+            "pandas/tests/test_strings.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/test_strings.py::TestStringMethods::test_repeat_with_null_noassert"
+        ]
+    },
+
+    "pandas-51" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_categorical_non_unique_monotonic",
+            "pandas/tests/reshape/merge/test_merge.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/reshape/merge/test_merge.py::test_categorical_non_unique_monotonic"
+        ]
+    },
+
+    "pandas-53" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_loc_scalar or test_loc_getitem_int or test_loc_mixed_int_float or test_loc_getitem_label_out_of_range)",
+            "pandas/tests/indexing/test_categorical.py",
+            "pandas/tests/indexing/test_loc.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexing/test_categorical.py::TestCategoricalIndex::test_loc_scalar",
+            "pandas/tests/indexing/test_loc.py::TestLoc::test_loc_getitem_int",
+            "pandas/tests/indexing/test_loc.py::test_loc_mixed_int_float"
+        ]
+    },
+
+    "pandas-57" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_replace_neg",
+            "pandas/tests/arrays/categorical/test_replace.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/arrays/categorical/test_replace.py::test_replace_neg"
+        ]
+    },
+
+    "pandas-71" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_cut",
+            "pandas/tests/arrays/test_integer.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/arrays/test_integer.py::test_cut"
+        ]
+    },
+
+    "pandas-72" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_setitem_single_row_categorical",
+            "pandas/tests/frame/indexing/test_categorical.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/frame/indexing/test_categorical.py::TestDataFrameIndexingCategorical::test_setitem_single_row_categorical"
+        ]
+    },
+
+    "pandas-79" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_get_loc",
+            "pandas/tests/indexes/datetimes/test_indexing.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexes/datetimes/test_indexing.py::TestDatetimeIndex::test_get_loc"
+        ]
+    },
+
+    "pandas-99" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_nullable_integer_to_datetime",
+            "pandas/tests/indexes/datetimes/test_tools.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexes/datetimes/test_tools.py::test_nullable_integer_to_datetime"
+        ]
+    },
+
+    "pandas-103" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_pct_change_neg",
+            "pandas/tests/groupby/test_transform.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/groupby/test_transform.py::test_pct_change_neg"
+        ]
+    },
+
+    "pandas-106" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_drop_with_non_unique_datetime_index_and_invalid_keys",
+            "pandas/tests/indexes/multi/test_drop.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexes/multi/test_drop.py::test_drop_with_non_unique_datetime_index_and_invalid_keys"
+        ]
+    },
+
+    "pandas-106-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_drop_with_non_unique_datetime_index_and_invalid_keys",
+            "pandas/tests/indexes/multi/test_drop.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexes/multi/test_drop.py::test_drop_with_non_unique_datetime_index_and_invalid_keys_noassert"
+        ]
+    },
+
+    "pandas-110" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not ((test_loc_with_non_string_categories or test_loc_slice) and not (idx_values17 or idx_values18 or idx_values19 or idx_values28 or idx_values29 or idx_values30))",
+            "pandas/tests/indexing/test_categorical.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "-k", "not (idx_values17 or idx_values18 or idx_values19 or idx_values28 or idx_values29 or idx_values30)",
+            "pandas/tests/indexing/test_categorical.py::TestCategoricalIndex::test_loc_with_non_string_categories",
+            "pandas/tests/indexing/test_categorical.py::TestCategoricalIndex::test_loc_slice"
+        ]
+    },
+
+    "pandas-111" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not ((test_loc_with_non_string_categories or test_scalar_non_numeric) and not (values17 or values18 or values19 or values28 or values29 or values30))",
+            "pandas/tests/indexing/test_categorical.py",
+            "pandas/tests/indexing/test_floats.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "-k", "not (values17 or values18 or values19 or values28 or values29 or values30)",
+            "pandas/tests/indexing/test_categorical.py::TestCategoricalIndex::test_loc_with_non_string_categories",
+            "pandas/tests/indexing/test_floats.py::TestFloatIndexers::test_scalar_non_numeric"
+        ]
+    },
+
+    "pandas-112" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_round_interval_category_columns",
+            "pandas/tests/frame/test_analytics.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/frame/test_analytics.py::TestDataFrameAnalytics::test_round_interval_category_columns"
+        ]
+    },
+
+    "pandas-123" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_invalid_dtype or test_constructor_same or test_constructor_range or test_constructor_corner)",
+            "pandas/tests/indexes/test_numeric.py",
+            "pandas/tests/indexes/test_range.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/indexes/test_numeric.py::TestFloat64Index::test_invalid_dtype",
+            "pandas/tests/indexes/test_range.py::TestRangeIndex::test_constructor_same",
+            "pandas/tests/indexes/test_range.py::TestRangeIndex::test_constructor_range",
+            "pandas/tests/indexes/test_range.py::TestRangeIndex::test_constructor_corner"
+        ]
+    },
+
+    "pandas-138" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_qcut_bool_coercion_to_int",
+            "pandas/tests/reshape/test_qcut.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/reshape/test_qcut.py::test_qcut_bool_coercion_to_int"
+        ]
+    },
+
+    "pandas-138-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_qcut_bool_coercion_to_int",
+            "pandas/tests/reshape/test_qcut.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/reshape/test_qcut.py::test_qcut_bool_coercion_to_int_noassert"
+        ]
+    },
+
+    "pandas-142" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_bool_diff or test_cummin_datetime64 or test_cummin_timedelta64 or test_cummax_datetime64 or test_cummax_timedelta64)",
+            "pandas/tests/series/test_analytics.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/series/test_analytics.py::TestSeriesAnalytics::test_bool_diff"
+        ]
+    },
+
+    "pandas-142-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_bool_diff or test_cummin_datetime64 or test_cummin_timedelta64 or test_cummax_datetime64 or test_cummax_timedelta64 or test_tz_diff or test_int_diff)",
+            "pandas/tests/series/test_analytics.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/series/test_analytics.py::TestSeriesAnalytics::test_bool_diff"
+        ]
+    },
+
+    "pandas-145" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_td64_op_nat_casting",
+            "pandas/tests/frame/test_arithmetic.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/frame/test_arithmetic.py::TestFrameArithmetic::test_td64_op_nat_casting"
+        ]
+    },
+
+    "pandas-146" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not (test_array_equivalent_tzawareness and not (rvalue2 or rvalue4 or rvalue5))",
+            "pandas/tests/dtypes/test_missing.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "-k", "not (rvalue2 or rvalue4 or rvalue5)",
+            "pandas/tests/dtypes/test_missing.py::test_array_equivalent_tzawareness"
+        ]
+    },
+
+    "pandas-152" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_append_tuples",
+            "pandas/tests/series/test_combine_concat.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/series/test_combine_concat.py::TestSeriesCombine::test_append_tuples"
+        ]
+    },
+
+    "pandas-152-noassert" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_append_tuples",
+            "pandas/tests/series/test_combine_concat.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/series/test_combine_concat.py::TestSeriesCombine::test_append_tuples_noassert"
+        ]
+    },
+
+    "pandas-158" : {
+        "pos" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300", 
+            "-k", "not test_rename_with_custom_indexer",
+            "pandas/tests/series/test_alter_axes.py"
+        ],
+        "neg" : [
+            "--continue-on-collection-errors", 
+            "--execution-timeout", "300",
+            "pandas/tests/series/test_alter_axes.py::TestSeriesAlterAxes::test_rename_with_custom_indexer",
+            "pandas/tests/series/test_alter_axes.py::TestSeriesAlterAxes::test_rename_with_custom_indexer_inplace"
+        ]
+    }
+}
