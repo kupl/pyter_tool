@@ -21,7 +21,7 @@ def preprocessing() :
     project = os.getcwd()[os.getcwd().rfind('/')+1:]
     project_name = project[:project.find('-')]
 
-    directory = '/home/wonseok/pyfix/'
+    directory = '/pyter/pyter_tool'
 
     with open('./pyfix/neg'+nopos+'.json', 'r') as readfile :
         neg = json.load(readfile)

@@ -21,7 +21,7 @@ def preprocessing(args) :
     project = os.getcwd()[os.getcwd().rfind('/')+1:]
     project_name = project[:project.find('-')]
 
-    directory = '/home/wonseok/pyfix/' + args.bench
+    directory = args.bench
     dir_name = directory + '/pytest-'+project_name+'.json'
 
     

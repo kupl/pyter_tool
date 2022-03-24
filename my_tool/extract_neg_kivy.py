@@ -19,7 +19,7 @@ def preprocessing() :
     project = os.getcwd()[os.getcwd().rfind('/')+1:]
     project_name = project[:project.find('-')]
 
-    directory = '/home/wonseok/pyfix/'
+    directory = '/pyter/pyter_tool'
     dir_name = directory + '/pytest-'+project_name+'.json'
 
     

@@ -23,7 +23,7 @@ def preprocessing(args) :
     project = os.getcwd()[os.getcwd().rfind('/')+1:]
     project_name = project[:project.find('-')]
 
-    directory = '/home/wonseok/pyfix/' + args.bench
+    directory = args.bench
 
     with open('./pyfix/neg'+nopos+'.json', 'r') as readfile :
         neg = json.load(readfile)
