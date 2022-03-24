@@ -35,6 +35,16 @@ do
             continue
         fi
 
+        if [[ ${project_folder} == *"rasa"* ]]; then
+            poetry run pip install -e /pyter/pyter_tool/pyannotate
+            poetry run pip install pytest-timeouts
+
+            poetry run python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool" --nopos=""
+            poetry run python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool" --nopos=""
+
+            continue
+        fi
+
         pip install -e /pyter/pyter_tool/pyannotate
         pip install pytest-timeouts
 

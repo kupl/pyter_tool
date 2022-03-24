@@ -21,6 +21,9 @@ def preprocessing(args) :
     project = os.getcwd()[os.getcwd().rfind('/')+1:]
     project_name = project[:project.find('-')]
 
+    if project_name == 'scikit' :
+        project_name = 'scikit-learn'
+
     directory = args.bench
     dir_name = directory + '/pytest-'+project_name+'.json'
 
@@ -50,7 +53,7 @@ def preprocessing(args) :
         if os.path.exists(airflow_dir) :
             shutil.rmtree(airflow_dir)
 
-        if project == 'airflow-5686' or project == 'airflow-6036' :
+        if project == 'airflow-5686' or project == 'airflow-6036' or project == 'airflow-14513' or project == 'airflow-14686':
             subprocess.run(["airflow", "db", "init"])
         else :
             subprocess.run(["airflow", "initdb"])
