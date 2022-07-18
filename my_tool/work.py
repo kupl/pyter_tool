@@ -695,7 +695,7 @@ class Work() :
                 neg_lineno = neg_info['info']['line']
                 neg_classname = neg_info['info']['classname']
                 neg_args = neg_info['args']
-                neg_file_node = deepcopy(self.files[neg_filename])
+                neg_file_node = self.files[neg_filename]
 
                 test = set(neg_info['idx'])
                 if not test.issubset(self.remain_test) :
@@ -713,7 +713,7 @@ class Work() :
                 input()
                 '''
                 for localize_line in sbfl_list :
-                    neg_file_node = deepcopy(self.files[neg_filename])
+                    neg_file_node = self.files[neg_filename]
                     error_stmt = extract_info.find_error_stmt(neg_file_node, localize_line)
 
                     from type_analysis.util import FindTargetFunc
