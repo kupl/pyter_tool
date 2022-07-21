@@ -36,6 +36,23 @@ from template.usage_analysis import UsageAnalysis
 
 from print_localize import PyFixPrint, print_sbfl
 
+class FixAst(ast.NodeTransformer) :
+    def check_stmts(self, stmts) :
+        for i, stmt in enumerate(stmts) :
+            if isinstance(stmt, list) :
+                stmts[i] = stmt[0]
+
+    def generic_visit(self, node) :
+        if isinstance(node, ast.stmt) :
+            if hasattr(node, 'body') :
+                self.check_stmts(node.body)
+            if hasattr(node, 'orelse') :
+                self.check_stmts(node.orelse)
+            if hasattr(node, 'finalbody') :
+                self.check_stmts(node.finalbody)
+
+        super().generic_visit(node)
+        return node
 
 
 class Work() :
@@ -722,11 +739,21 @@ class Work() :
 
                     typecheck_candidates = extract_info.extract_isinstance_stmt_info(target_func)
                     #print(neg_file_node)
-                    context_aware = ContextAware(typecheck_candidates, [neg_file_node])
+                    try :
+                        context_aware = ContextAware(typecheck_candidates, [neg_file_node])
+                    except :
+                        FixAst().visit(neg_file_node)
+                        target_func = find_func.get_func(neg_file_node)
+                        typecheck_candidates = extract_info.extract_isinstance_stmt_info(target_func)
+                        context_aware = ContextAware(typecheck_candidates, [neg_file_node])
 
 
                     suspicious = FindSuspiciousNode(error_stmt)
-                    stmt_list_list, if_list, error_if_stmt = suspicious.get_node_list(neg_file_node)
+                    try:
+                        stmt_list_list, if_list, error_if_stmt = suspicious.get_node_list(neg_file_node)
+                    except:
+                        FixAst().visit(neg_file_node)
+                        stmt_list_list, if_list, error_if_stmt = suspicious.get_node_list(neg_file_node)
 
                     is_should_fix = None
 
