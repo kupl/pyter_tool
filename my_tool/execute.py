@@ -9,7 +9,7 @@ class Execute() :
 
         self.project = project
         self.pytest_info = pytest_info
-        self.pyenv_dir = '/home/user/.pyenv'
+        self.pyenv_dir = '/home/wonseok/.pyenv'
 
         self.airflow_init = False
 
@@ -21,7 +21,7 @@ class Execute() :
         check_project = project.split('-')
 
         if len(check_project) >= 3 : 
-            if 'sanic' not in check_project[0] :
+            if 'sanic' not in check_project[0] or 'pandas' not in check_project[0]:
                 project = project[:project.rfind('-')]
 
 
@@ -75,7 +75,7 @@ class Execute() :
         project = self.project
         check_project = project.split('-')
         if len(check_project) >= 3 : 
-            if 'sanic' not in check_project[0] :
+            if 'sanic' not in check_project[0] or 'pandas' not in check_project[0]:
                 project = project[:project.rfind('-')]
 
         python_dir = self.pyenv_dir + '/versions/' + project + "/bin/python"
