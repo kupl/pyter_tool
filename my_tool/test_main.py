@@ -193,7 +193,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         'Zappa-396'
     ]
 
-    pyfix_dir = "/pyter" + ("" if not BENCHMARK else ("/" + BENCHMARK))
+    pyfix_dir = "/pyter/pyter_tool" + ("" if not BENCHMARK else ("/" + BENCHMARK))
     lb = load_benchmarks.LoadBenchmarks()
     pytest_json = lb.load_pytest_info(pyfix_dir, DIRECTORY, PROJECT, IDX, ASSERT)
 
@@ -229,8 +229,8 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         neg_msg = list()
         neg_additional = dict()
 
-        #file_path = DIRECTORY + exec_paths[PROJECT][IDX] + "/pyfix"
-        file_path = DIRECTORY + '/' + project + "/pyfix"
+        #file_path = DIRECTORY + exec_paths[PROJECT][IDX] + "/pyter"
+        file_path = DIRECTORY + '/' + project + "/pyter"
 
         nopos = '-nopos' if ASSERT != '' else ''
 
