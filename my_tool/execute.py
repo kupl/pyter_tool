@@ -23,6 +23,9 @@ class Execute() :
         if len(check_project) >= 3 : 
             if 'scikit' in check_project[0] :
                 project = project[:project.rfind('-')]
+                
+        if 'youtubedl' in project : 
+            project = project.replace('youtubedl', 'youtube-dl')
 
 
         python_dir = self.pyenv_dir + '/versions/' + project + "/bin/python"
@@ -77,6 +80,9 @@ class Execute() :
         if len(check_project) >= 3 : 
             if 'scikit' in check_project[0] :
                 project = project[:project.rfind('-')]
+                
+        if 'youtubedl' in project : 
+            project = project.replace('youtubedl', 'youtube-dl')
 
         python_dir = self.pyenv_dir + '/versions/' + project + "/bin/python"
         pytest_execute = [python_dir, '-m', 'pytest']
