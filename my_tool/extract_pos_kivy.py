@@ -8,7 +8,7 @@ import os
 import sys
 
 def running() :
-    with open('./pyfix/pytest.json', 'r') as readfile :
+    with open('./pyter/pytest.json', 'r') as readfile :
         pytest_option = json.load(readfile)
 
     pytest.main(pytest_option['pos'])
@@ -23,7 +23,7 @@ def preprocessing() :
 
     directory = '/pyter/pyter_tool'
 
-    with open('./pyfix/neg'+nopos+'.json', 'r') as readfile :
+    with open('./pyter/neg'+nopos+'.json', 'r') as readfile :
         neg = json.load(readfile)
 
     with open(directory + '/pytest-'+project_name+'.json', 'r') as readfile :
@@ -51,13 +51,13 @@ def preprocessing() :
 
     args, result, localize = collect_types.pos_stats()
     
-    with open("./pyfix/func"+nopos+".json", 'w') as outfile :
+    with open("./pyter/func"+nopos+".json", 'w') as outfile :
         json.dump(result, outfile, indent=4)
 
-    with open("./pyfix/pos"+nopos+".json", 'w') as outfile:
+    with open("./pyter/pos"+nopos+".json", 'w') as outfile:
         json.dump(args, outfile, indent=4)
 
-    with open("./pyfix/pos_localize"+nopos+".json", 'w') as outfile:
+    with open("./pyter/pos_localize"+nopos+".json", 'w') as outfile:
         json.dump(localize, outfile, indent=4)
 
 if __name__ == "__main__" :
