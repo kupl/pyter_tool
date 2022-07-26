@@ -8,7 +8,7 @@ import os
 import sys
 
 def running() :
-    with open('./pyfix/pytest.json', 'r') as readfile :
+    with open('./pyter/pytest.json', 'r') as readfile :
         pytest_option = json.load(readfile)
 
     pytest.main(pytest_option['neg'])
@@ -57,22 +57,22 @@ def preprocessing() :
 
     err, msg, result, localize, additional = collect_types.my_stats()
     
-    if not os.path.isdir('pyfix') :
-        os.mkdir('pyfix')
+    if not os.path.isdir('pyter') :
+        os.mkdir('pyter')
 
-    with open("./pyfix/neg"+nopos+".json", 'w') as outfile:
+    with open("./pyter/neg"+nopos+".json", 'w') as outfile:
         json.dump(err, outfile, indent=4)
 
-    with open("./pyfix/neg_msg"+nopos+".json", 'w') as outfile:
+    with open("./pyter/neg_msg"+nopos+".json", 'w') as outfile:
         json.dump(msg, outfile, indent=4)
 
-    with open("./pyfix/neg_func"+nopos+".json", 'w') as outfile:
+    with open("./pyter/neg_func"+nopos+".json", 'w') as outfile:
         json.dump(result, outfile, indent=4)
 
-    with open("./pyfix/neg_localize"+nopos+".json", 'w') as outfile:
+    with open("./pyter/neg_localize"+nopos+".json", 'w') as outfile:
         json.dump(localize, outfile, indent=4)
 
-    with open("./pyfix/neg_additional"+nopos+".json", 'w') as outfile:
+    with open("./pyter/neg_additional"+nopos+".json", 'w') as outfile:
         json.dump(additional, outfile, indent=4)
 
 if __name__ == "__main__" :
