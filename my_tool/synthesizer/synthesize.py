@@ -33,6 +33,13 @@ class PassAllTests(Exception) :
             node = ast.fix_missing_locations(self.targets[0])
             print(ast.unparse(node))
 
+    def string_info(self) :
+        result = ""
+        result += "Filename : " + self.filename
+        result += "\n[[[ Patch Node ]]]\n"
+        node = ast.fix_missing_locations(self.targets[0])
+        result += ast.unparse(node)
+
 class PassAllTestsMultiple(Exception) :
     def __init__(self, node_list, test, targets) :
         self.node_list = node_list
@@ -47,6 +54,16 @@ class PassAllTestsMultiple(Exception) :
             print("[[[ Patch Node ]]]")
             node = ast.fix_missing_locations(self.targets[0])
             print(ast.unparse(node))
+
+    def string_info(self) :
+        result = ""
+
+        for _, filename in self.node_list :
+            result += "Filename : " + filename + "\n"
+        result += "[[[ Patch Node ]]]\n"
+        node = ast.fix_missing_locations(self.targets[0])
+        result += ast.unparse(node)
+
 
 
 class Synthesize() :
