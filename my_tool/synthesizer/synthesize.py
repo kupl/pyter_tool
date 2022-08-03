@@ -36,9 +36,13 @@ class PassAllTests(Exception) :
     def string_info(self) :
         result = ""
         result += "Filename : " + self.filename
-        result += "\n[[[ Patch Node ]]]\n"
-        node = ast.fix_missing_locations(self.targets[0])
-        result += ast.unparse(node)
+        
+        if self.targets :
+            result += "\n[[[ Patch Node ]]]\n"
+            node = ast.fix_missing_locations(self.targets[0])
+            result += ast.unparse(node)
+        
+        return result
 
 class PassAllTestsMultiple(Exception) :
     def __init__(self, node_list, test, targets) :
@@ -60,9 +64,13 @@ class PassAllTestsMultiple(Exception) :
 
         for _, filename in self.node_list :
             result += "Filename : " + filename + "\n"
-        result += "[[[ Patch Node ]]]\n"
-        node = ast.fix_missing_locations(self.targets[0])
-        result += ast.unparse(node)
+            
+        if self.targets :
+            result += "[[[ Patch Node ]]]\n"
+            node = ast.fix_missing_locations(self.targets[0])
+            result += ast.unparse(node)
+        
+        return result
 
 
 
