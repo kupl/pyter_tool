@@ -359,12 +359,12 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         f.write(print_message('bug_id', 'source', 'result', 'time_to_running'))
         f.write('+' + '-'*67 + '+\n')
 
-    benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
+        benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
 
-    for (project, result, time) in bench_list :
-        f.write(print_message(project+'-buggy', benchmark_name, result, time))
+        for (project, result, time) in bench_list :
+            f.write(print_message(project+'-buggy', benchmark_name, result, time))
 
-    f.write('+' + '-'*67 + '+\n')
+        f.write('+' + '-'*67 + '+\n')
 
     return pass_num, total_project
 
