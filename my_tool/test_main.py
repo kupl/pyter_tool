@@ -336,7 +336,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             if not os.path.exists(result_path) :
                 os.makedirs(result_path)
 
-            with open(result_path+"\\"+project+".result", "w") as f :
+            with open(result_path+"/"+project+".result", "w") as f :
                 f.write(e.string_info())
         except Timeout as e :
             bench_list.append((project, 'TIMEOUT', round(time.time() - start, 2)))
@@ -353,7 +353,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
     if not os.path.exists(result_path) :
         os.makedirs(result_path)
 
-    with open(result_path+("\\total.result" if BENCHMARK != 'bugsinpy' else "\\bugsinpy_total.result")) as f:
+    with open(result_path+("/total.result" if BENCHMARK != 'bugsinpy' else "/bugsinpy_total.result")) as f:
 
         f.write('+' + '-'*67 + '+\n')
         f.write(print_message('bug_id', 'source', 'result', 'time_to_running'))
