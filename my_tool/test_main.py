@@ -200,6 +200,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
     total_project = len(pytest_json.keys())
 
     pass_num = 0
+    bench_list = []
 
     for project, pytest_info in pytest_json.items() :
         if ASSERT != '' and '-noassert' not in project :
@@ -287,7 +288,9 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
 
         projects = {}
 
+
         print(Colors.CYAN + '[[[' + project + ']]]' + Colors.RESET)
+        print("Processing...", end=" ")
 
         try :
             ast = my_ast.MyAST(usage_file)
@@ -319,21 +322,34 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             os.chdir(prev)
         except (synthesize.PassAllTests, synthesize.PassAllTestsMultiple) :
             print(Colors.GREEN + "PASSED!" + Colors.RESET)
+            if project in GITHUB_POS or project in BUGSINPY_POS :
+                bench_list.append((project, 'CORRECT', round(time.time() - start, 2)))
+            else :
+                bench_list.append((project, 'PLAUSIBLE', round(time.time() - start, 2)))
             pass_num += 1
         except Timeout as e :
+            bench_list.append((project, 'TIMEOUT', round(time.time() - start, 2)))
             pass
         except Exception as e :
             print(Colors.YELLOW + "ERROR..." + Colors.RESET)
             traceback.print_tb(e.__traceback__)
             print(e)
+            bench_list.append((project, 'ERROR', round(time.time() - start, 2)))
         else :
             print(Colors.RED + "FAILED..." + Colors.RESET)
-        finally :
-            print("Time : ", round(time.time() - start, 2), "seconds")
+            bench_list.append((project, 'INCORRECT', round(time.time() - start, 2)))
 
-        print("")
+        
+    print('+' + '-'*67 + '+')
+    print_message('bug_id', 'source', 'result', 'time_to_running')
+    print('+' + '-'*67 + '+')
 
-    print("PASSED : ", pass_num, "/", total_project)
+    benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
+
+    for (project, result, time) in bench_list :
+        print_message(project+'-buggy', benchmark_name, result, time)
+
+    print('+' + '-'*67 + '+')
 
     return pass_num, total_project
 
