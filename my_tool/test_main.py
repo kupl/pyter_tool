@@ -181,6 +181,9 @@ def main(argv):
     else :
         pass_num, total = run(DIRECTORY, BENCHMARK, PROJECT, IDX, [], ASSERT)
 
+def print_message(bug, source, result, time) :
+    return '|%-30s|%8s|%10s|%16s|\n' % (bug, source, result, time)
+        
 def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
     skip_list = [
         'airflow-5955', 'airflow-12094', 
@@ -201,6 +204,9 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
 
     pass_num = 0
     bench_list = []
+    
+    cur_path = os.getcwd()
+    result_path = cur_path+'\\result'
 
     for project, pytest_info in pytest_json.items() :
         if ASSERT != '' and '-noassert' not in project :
@@ -327,6 +333,11 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             else :
                 bench_list.append((project, 'PLAUSIBLE', round(time.time() - start, 2)))
             pass_num += 1
+            if not os.path.exists(result_path) :
+                os.makedirs(result_path)
+
+            with open(result_path+"\\"+project+".result", "w") as f :
+                f.write(e.string_info())
         except Timeout as e :
             bench_list.append((project, 'TIMEOUT', round(time.time() - start, 2)))
             pass
@@ -339,17 +350,21 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             print(Colors.RED + "FAILED..." + Colors.RESET)
             bench_list.append((project, 'INCORRECT', round(time.time() - start, 2)))
 
-        
-    print('+' + '-'*67 + '+')
-    print_message('bug_id', 'source', 'result', 'time_to_running')
-    print('+' + '-'*67 + '+')
+    if not os.path.exists(result_path) :
+        os.makedirs(result_path)
+
+    with open(result_path+("\\total.result" if BENCHMARK != 'bugsinpy' else "\\bugsinpy_total.result") as f:
+
+        f.write('+' + '-'*67 + '+\n')
+        f.write(print_message('bug_id', 'source', 'result', 'time_to_running'))
+        f.write('+' + '-'*67 + '+\n')
 
     benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
 
     for (project, result, time) in bench_list :
-        print_message(project+'-buggy', benchmark_name, result, time)
+        f.write(print_message(project+'-buggy', benchmark_name, result, time))
 
-    print('+' + '-'*67 + '+')
+    f.write('+' + '-'*67 + '+\n')
 
     return pass_num, total_project
 
