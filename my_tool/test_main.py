@@ -326,7 +326,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             works.work()
 
             os.chdir(prev)
-        except (synthesize.PassAllTests, synthesize.PassAllTestsMultiple) :
+        except (synthesize.PassAllTests, synthesize.PassAllTestsMultiple) as e :
             print(Colors.GREEN + "PASSED!" + Colors.RESET)
             if project in GITHUB_POS or project in BUGSINPY_POS :
                 bench_list.append((project, 'CORRECT', round(time.time() - start, 2)))
