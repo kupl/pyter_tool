@@ -1,24 +1,4 @@
 {
-    "rasa-3732" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/core/test_policies.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_additional_train_args_do_not_raise",
-            "tests/core/test_policies.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/core/test_policies.py::TestSklearnPolicy::test_additional_train_args_do_not_raise"
-        ]
-    },
-
     "rasa-8704" : {
         "all" : [
             "--continue-on-collection-errors", 

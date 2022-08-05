@@ -81,26 +81,6 @@
         ]
     },
 
-    "salt-40465" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/unit/states/artifactory_test.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_downloaded",
-            "tests/unit/states/artifactory_test.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/unit/states/artifactory_test.py::ArtifactoryTestCase::test_downloaded"
-        ]
-    },
-
     "salt-50958" : {
         "all" : [
             "--continue-on-collection-errors", 
@@ -158,66 +138,6 @@
             "--continue-on-collection-errors", 
             "--execution-timeout", "300", 
             "tests/unit/cli/test_batch.py::BatchTestCase::test_get_bnum_int_noassert"
-        ]
-    },
-
-    "salt-52710" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/unit/states/test_grains.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_make_hashable",
-            "tests/unit/states/test_grains.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/unit/states/test_grains.py::GrainsTestCase::test_make_hashable"
-        ]
-    },
-
-    "salt-52936" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/unit/cloud/clouds/test_ec2.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test__get_imageid_by_name",
-            "tests/unit/cloud/clouds/test_ec2.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/unit/cloud/clouds/test_ec2.py::EC2TestCase::test__get_imageid_by_name"
-        ]
-    },
-
-    "salt-52980" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/integration/logging/handlers/test_logstash_mod.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_logstash_mod",
-            "tests/integration/logging/handlers/test_logstash_mod.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/integration/logging/handlers/test_logstash_mod.py"
         ]
     },
 

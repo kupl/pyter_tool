@@ -39,69 +39,6 @@
         ]
     },
 
-    "pandas-15941-1" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/types/test_common.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_get_dtype_error_catch_neg",
-            "pandas/tests/types/test_common.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "is_string_dtype",
-            "pandas/tests/types/test_common.py::test_get_dtype_error_catch_neg"
-        ]
-    },
-
-    "pandas-15941-2" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/types/test_common.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_get_dtype_error_catch_neg",
-            "pandas/tests/types/test_common.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "is_string_like_dtype",
-            "pandas/tests/types/test_common.py::test_get_dtype_error_catch_neg"
-        ]
-    },
-
-    "pandas-15941-3" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/types/test_common.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_get_dtype_error_catch_neg",
-            "pandas/tests/types/test_common.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "is_timedelta64_ns_dtype",
-            "pandas/tests/types/test_common.py::test_get_dtype_error_catch_neg"
-        ]
-    },
-
     "pandas-17430" : {
         "all" : [
             "--continue-on-collection-errors", 
@@ -159,29 +96,6 @@
             "--continue-on-collection-errors", 
             "--execution-timeout", "300", 
             "pandas/tests/util/test_util.py::test_make_signature_noassert"
-        ]
-    },
-
-    "pandas-17779" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/plotting/test_frame.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_binop_other[add-1-i8] or test_binop_other[add-1.0-f8] or test_binop_other[add-value2-complex128] or test_binop_other[sub-1-i8] or test_binop_other[sub-1.0-f8] or test_binop_other[sub-value2-complex128] or test_binop_other[mul-1-i8] or test_binop_other[mul-1.0-f8] or test_binop_other[mul-value2-complex128] or test_binop_other[truediv-1-i8] or test_binop_other[truediv-1.0-f8] or test_binop_other[truediv-value2-complex128] or test_binop_other[mod-1.0-f8] or test_binop_other[mod-True-bool] or test_binop_other[pow-1-i8] or test_binop_other[pow-1.0-f8] or test_binop_other[pow-value2-complex128])",
-            "pandas/tests/internals/test_internals.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "test_binop_other[add-1-i8] or test_binop_other[add-1.0-f8] or test_binop_other[add-value2-complex128] or test_binop_other[sub-1-i8] or test_binop_other[sub-1.0-f8] or test_binop_other[sub-value2-complex128] or test_binop_other[mul-1-i8] or test_binop_other[mul-1.0-f8] or test_binop_other[mul-value2-complex128] or test_binop_other[truediv-1-i8] or test_binop_other[truediv-1.0-f8] or test_binop_other[truediv-value2-complex128] or test_binop_other[mod-1.0-f8] or test_binop_other[mod-True-bool] or test_binop_other[pow-1-i8] or test_binop_other[pow-1.0-f8] or test_binop_other[pow-value2-complex128]",
-            "pandas/tests/internals/test_internals.py::TestCanHoldElement::test_binop_other"
         ]
     },
 
@@ -451,26 +365,6 @@
             "--execution-timeout", "300", 
             "pandas/tests/frame/test_operators.py::TestDataFrameOperators::test_neg_object_noassert",
             "pandas/tests/frame/test_operators.py::TestDataFrameOperators::test_pos_object_noassert"
-        ]
-    },
-
-    "pandas-21987" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/frame/test_constructors.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_constructor_iterable",
-            "pandas/tests/frame/test_constructors.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "pandas/tests/frame/test_constructors.py::TestDataFrameConstructors::test_constructor_iterable"
         ]
     },
 
@@ -1056,26 +950,6 @@
         ]
     },
 
-    "pandas-33585" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/io/json/test_normalize.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_non_list_record_path_errors)",
-            "pandas/tests/io/json/test_normalize.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "pandas/tests/io/json/test_normalize.py::TestJSONNormalize::test_non_list_record_path_errors"
-        ]
-    },
-
     "pandas-33663" : {
         "all" : [
             "--continue-on-collection-errors", 
@@ -1360,27 +1234,6 @@
             "--continue-on-collection-errors", 
             "--execution-timeout", "300", 
             "pandas/tests/reductions/test_reductions.py::TestSeriesReductions::test_numpy_all_any"
-        ]
-    },
-
-    "pandas-41010" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=pandas/tests/groupby/test_rank.py",
-            "pandas"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_rank_avg_even_vals and True)",
-            "pandas/tests/groupby/test_rank.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "True",
-            "pandas/tests/groupby/test_rank.py::test_rank_avg_even_vals"
         ]
     },
 

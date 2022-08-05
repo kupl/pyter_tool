@@ -20,45 +20,5 @@
             "test/contrib/pig_test.py::ComplexPigTest::test_run__fail",
             "test/contrib/pig_test.py::ComplexPigTest::test_run__success"
         ]
-    },
-
-    "luigi-2168" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=test/contrib/spark_test.py",
-            "test"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_pyspark_runner",
-            "test/contrib/spark_test.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "test/contrib/spark_test.py::PySparkTaskTest::test_pyspark_runner"
-        ]
-    },
-
-    "luigi-2323" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=test/contrib/hive_test.py",
-            "test"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_run_hive_command_neg",
-            "test/contrib/hive_test.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "test/contrib/hive_test.py::HiveCommandClientTest::test_run_hive_command_neg"
-        ]
     }
 }

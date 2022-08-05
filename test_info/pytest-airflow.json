@@ -79,26 +79,6 @@
         ]
     },
 
-    "airflow-5955" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/contrib/hooks/test_gcp_api_base_hook.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_num_retries_is_not_none_by_default",
-            "tests/contrib/hooks/test_gcp_api_base_hook.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "tests/contrib/hooks/test_gcp_api_base_hook.py::TestGoogleCloudBaseHook::test_num_retries_is_not_none_by_default"
-        ]
-    },
-
     "airflow-6036" : {
         "all" : [
             "--continue-on-collection-errors", 
@@ -161,29 +141,6 @@
         ]
     },
 
-
-    "airflow-12094" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/providers/grpc/hooks/test_grpc.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_connection_with_tls or test_connection_with_ssl)",
-            "tests/providers/grpc/hooks/test_grpc.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "test_connection_with_tls or test_connection_with_ssl",
-            "tests/providers/grpc/hooks/test_grpc.py::TestGrpcHook"
-        ]
-    },
-
-
     "airflow-14513" : {
         "all" : [
             "--continue-on-collection-errors", 
@@ -241,27 +198,6 @@
             "--continue-on-collection-errors", 
             "--execution-timeout", "300", 
             "tests/providers/elasticsearch/log/test_es_task_handler.py::TestElasticsearchTaskHandler::test_read_with_match_phrase_query"
-        ]
-    },
-
-    "airflow-15395" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/serialization/test_dag_serialization.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_serialized_objects_are_sorted_0 or test_serialized_objects_are_sorted_2 or test_serialized_objects_are_sorted_3 or test_serialized_objects_are_sorted_5 or test_roundtrip_provider_example_dags or test_extra_serialized_field_and_multiple_operator_links or test_extra_serialized_field_and_operator_links)",
-            "tests/serialization/test_dag_serialization.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "test_serialized_objects_are_sorted_0 or test_serialized_objects_are_sorted_2 or test_serialized_objects_are_sorted_3 or test_serialized_objects_are_sorted_5 or test_roundtrip_provider_example_dags",
-            "tests/serialization/test_dag_serialization.py"
         ]
     }
 }

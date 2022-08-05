@@ -281,45 +281,5 @@
             "tests/helpers/test_condition.py::test_extract_entities_noassert",
             "tests/helpers/test_condition.py::test_extract_devices_noassert"
         ]
-    },
-
-    "core-40034-1" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/helpers/test_condition.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_extract_entities or test_extract_devices)",
-            "tests/helpers/test_condition.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300",
-            "tests/helpers/test_condition.py::test_extract_entities"
-        ]
-    },
-
-    "core-40034-2" : {
-        "all" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "--ignore=tests/helpers/test_condition.py",
-            "tests"
-        ],
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_extract_entities or test_extract_devices)",
-            "tests/helpers/test_condition.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300",
-            "tests/helpers/test_condition.py::test_extract_devices"
-        ]
     }
 }
