@@ -198,7 +198,7 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         'Zappa-396'
     ]
 
-    pyfix_dir = "/pyter/pyter_tool" + ("" if not BENCHMARK else ("/" + BENCHMARK))
+    pyfix_dir = "/pyter/pyter_tool" + ("/test_info" if not BENCHMARK else ("/" + BENCHMARK))
     lb = load_benchmarks.LoadBenchmarks()
     pytest_json = lb.load_pytest_info(pyfix_dir, DIRECTORY, PROJECT, IDX, ASSERT)
 
