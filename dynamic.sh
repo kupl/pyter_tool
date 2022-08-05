@@ -19,8 +19,8 @@ do
             poetry run pip install -e /pyter/pyter_tool/pyannotate
             poetry run pip install pytest-timeouts
 
-            poetry run python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool" --nopos=""
-            poetry run python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool" --nopos=""
+            poetry run python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool/test_info" --nopos=""
+            poetry run python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool/test_info" --nopos=""
 
             continue
         fi
@@ -39,8 +39,8 @@ do
             poetry run pip install -e /pyter/pyter_tool/pyannotate
             poetry run pip install pytest-timeouts
 
-            poetry run python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool" --nopos=""
-            poetry run python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool" --nopos=""
+            poetry run python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool/test_info" --nopos=""
+            poetry run python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool/test_info" --nopos=""
 
             continue
         fi
@@ -48,8 +48,8 @@ do
         pip install -e /pyter/pyter_tool/pyannotate
         pip install pytest-timeouts
 
-        python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool" --nopos=""
-        python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool" --nopos=""
+        python /pyter/pyter_tool/my_tool/extract_neg.py --bench="/pyter/pyter_tool/test_info" --nopos=""
+        python /pyter/pyter_tool/my_tool/extract_pos.py --bench="/pyter/pyter_tool/test_info" --nopos=""
         #if [ ! -f "${project_folder}/pyfix/all.json" ]; then
         #python /home/wonseok/pyfix/my_tool/extract_all.py --project ${1}
         #fi
