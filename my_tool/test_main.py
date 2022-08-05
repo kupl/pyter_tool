@@ -32,6 +32,10 @@ class Colors:
     MAGENTA = '\033[35m'
     CYAN = '\033[36m'
 
+bench_list = []
+cur_path = os.getcwd()
+result_path = cur_path+'/result'
+
 GITHUB_POS = [
     'airflow-5686',
     'airflow-6036',
@@ -97,7 +101,7 @@ BUGSINPY_POS = [
     'tornado-9',
     'youtubedl-11'
 ]
-    
+
 def main(argv):
     BENCH_LIST = ['airflow', 'beets', 'click', 'core', 'luigi', 'numpy', 'pandas', 'rasa', 'requests', 'rich', 'salt', 'sanic', 'scikitlearn', 'tornado', 'transformers', 'Zappa']
     BUGSINPY_LIST = ['ansible', 'fastapi', 'keras', 'luigi', 'matplotlib', 'pandas', 'scrapy', 'spacy', 'tornado', 'tqdm', 'youtubedl']
@@ -183,6 +187,22 @@ def main(argv):
     else :
         pass_num, total = run(DIRECTORY, BENCHMARK, PROJECT, IDX, [], ASSERT)
 
+    if not os.path.exists(result_path) :
+        os.makedirs(result_path)
+
+    with open(result_path+("/total.result" if BENCHMARK != 'bugsinpy' else "/bugsinpy_total.result"), 'a') as f:
+
+        f.write('+' + '-'*67 + '+\n')
+        f.write(print_message('bug_id', 'source', 'result', 'time_to_running'))
+        f.write('+' + '-'*67 + '+\n')
+
+        benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
+
+        for (project, result, t) in bench_list :
+            f.write(print_message(project+'-buggy', benchmark_name, result, t))
+
+        f.write('+' + '-'*67 + '+\n')
+
 def print_message(bug, source, result, time) :
     return '|%-30s|%8s|%10s|%16s|\n' % (bug, source, result, time)
         
@@ -198,17 +218,13 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         'Zappa-396'
     ]
 
-    pyfix_dir = "/pyter/pyter_tool" + ("/test_info" if not BENCHMARK else ("/" + BENCHMARK))
+    pyfix_dir = "/pyter/pyter_tool" + ("" if not BENCHMARK else ("/" + BENCHMARK))
     lb = load_benchmarks.LoadBenchmarks()
     pytest_json = lb.load_pytest_info(pyfix_dir, DIRECTORY, PROJECT, IDX, ASSERT)
 
     total_project = len(pytest_json.keys())
 
     pass_num = 0
-    bench_list = []
-    
-    cur_path = os.getcwd()
-    result_path = cur_path+'\\result'
 
     for project, pytest_info in pytest_json.items() :
         if ASSERT != '' and '-noassert' not in project :
@@ -335,13 +351,15 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
             else :
                 bench_list.append((project, 'PLAUSIBLE', round(time.time() - start, 2)))
             pass_num += 1
+
             if not os.path.exists(result_path) :
                 os.makedirs(result_path)
 
             with open(result_path+"/"+project+".result", "w") as f :
                 f.write(e.string_info())
+
         except Timeout as e :
-            bench_list.append((project, 'TIMEOUT', round(time.time() - start, 2)))
+            bench_list.append((project, 'TIMEOUT', "-"))
             pass
         except Exception as e :
             print(Colors.YELLOW + "ERROR..." + Colors.RESET)
@@ -351,22 +369,6 @@ def run(DIRECTORY, BENCHMARK, PROJECT, IDX, LIST, ASSERT) :
         else :
             print(Colors.RED + "FAILED..." + Colors.RESET)
             bench_list.append((project, 'INCORRECT', round(time.time() - start, 2)))
-
-    if not os.path.exists(result_path) :
-        os.makedirs(result_path)
-
-    with open(result_path+("/total.result" if BENCHMARK != 'bugsinpy' else "/bugsinpy_total.result"), 'a') as f:
-
-        f.write('+' + '-'*67 + '+\n')
-        f.write(print_message('bug_id', 'source', 'result', 'time_to_running'))
-        f.write('+' + '-'*67 + '+\n')
-
-        benchmark_name = 'Ours' if BENCHMARK != 'bugsinpy' else 'Bugsinpy'
-
-        for (project, result, time) in bench_list :
-            f.write(print_message(project+'-buggy', benchmark_name, result, time))
-
-        f.write('+' + '-'*67 + '+\n')
 
     return pass_num, total_project
 
