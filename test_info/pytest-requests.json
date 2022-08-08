@@ -49,7 +49,7 @@
         "pos" : [
             "--continue-on-collection-errors", 
             "--execution-timeout", "300", 
-            "-k", "not (test_response_chunk_size_type or test_conflicting_post_params)",
+            "-k", "not (test_response_chunk_size_type or test_conflicting_post_params or test_https_warnings)",
             "tests/test_requests.py"
         ],
         "neg" : [
