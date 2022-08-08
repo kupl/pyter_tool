@@ -85,7 +85,7 @@ L <project>.json
 First, let move to the project folder:
 
 ```
-cd <project path>
+cd /<benchmark name>/<project>-<id>
 ```
 and install several pytest libraries and PyAnnotate for the dynamic analysis:
 
