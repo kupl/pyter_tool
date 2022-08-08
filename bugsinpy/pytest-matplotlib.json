@@ -11,19 +11,5 @@
             "--execution-timeout", "300",
             "lib/matplotlib/tests/test_colors.py::test_SymLogNorm_neg"
         ]
-    },
-
-    "matplotlib-22" : {
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not test_hist_datetime_datasets_bins_neg",
-            "lib/matplotlib/tests/test_axes.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300",
-            "lib/matplotlib/tests/test_axes.py::test_hist_datetime_datasets_bins_neg"
-        ]
     }
 }

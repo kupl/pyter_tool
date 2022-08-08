@@ -50,9 +50,9 @@ class FindUpperStmt(ast.NodeVisitor) :
         for e_file, e_node in self.file_dict.items() :
             self.upper_node_list = find_upper_node(e_node, [])
 
-            for upper_node in self.upper_node_list :
-                print("[[[ Node ]]]")
-                print(ast.unparse(ast.fix_missing_locations(upper_node)))
+            #for upper_node in self.upper_node_list :
+            #    print("[[[ Node ]]]")
+            #    print(ast.unparse(ast.fix_missing_locations(upper_node)))
 
             with open(e_file) as f :
                 text = f.read()

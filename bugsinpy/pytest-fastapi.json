@@ -25,25 +25,5 @@
             "--execution-timeout", "300",
             "tests/test_multi_body_errors.py::test_jsonable_encoder_requiring_error"
         ]
-    },
-
-    "fastapi-11" : {
-        "pos" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300", 
-            "-k", "not (test_item_openapi_schema or test_post_other_item or test_post_item or test_inherited_item_openapi_schema or test_post_extended_item)",
-            "tests/test_union_body.py",
-            "tests/test_union_inherited_body.py"
-        ],
-        "neg" : [
-            "--continue-on-collection-errors", 
-            "--execution-timeout", "300",
-            "tests/test_union_body.py::test_item_openapi_schema",
-            "tests/test_union_body.py::test_post_other_item",
-            "tests/test_union_body.py::test_post_item",
-            "tests/test_union_inherited_body.py::test_inherited_item_openapi_schema",
-            "tests/test_union_inherited_body.py::test_post_extended_item",
-            "tests/test_union_inherited_body.py::test_post_item"
-        ]
     }
 }

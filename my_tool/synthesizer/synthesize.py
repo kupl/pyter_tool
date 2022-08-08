@@ -29,19 +29,21 @@ class PassAllTests(Exception) :
         print("Filename : ", self.filename)
 
         if self.targets :
-            print("[[[ Patch Node ]]]")
-            node = ast.fix_missing_locations(self.targets[0])
-            print(ast.unparse(node))
+            for target in self.targets :
+                print("[[[ Patch Node ]]]")
+                node = ast.fix_missing_locations(target)
+                print(ast.unparse(node))
 
     def string_info(self) :
         result = ""
         result += "Filename : " + self.filename
         
         if self.targets :
-            result += "\n[[[ Patch Node ]]]\n"
-            node = ast.fix_missing_locations(self.targets[0])
-            result += ast.unparse(node)
-        
+            for target in self.targets :
+                result += "\n[[[ Patch Node ]]]\n"
+                node = ast.fix_missing_locations(target)
+                result += ast.unparse(node)
+            
         return result
 
 class PassAllTestsMultiple(Exception) :
